@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+    <!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="icon-fonts/elusive-icons-2.0.0/css/elusive-icons.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.custom.css">
+        <link rel="stylesheet" type="text/css" href="lib/lobibox/lobibox.css">
+       <link rel="icon" href="images/icon.gif" type="image/gif" sizes="16x16">
+
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <title>Trade Copier</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <style>
+            @font-face {
+                font-family: "Roboto-Thin";
+                src: url('assets/Roboto-Thin.ttf') format('truetype');
+            }
+            @font-face {
+                font-family: "Roboto-Regular";
+                src: url('assets/Roboto-Regular.ttf') format('truetype');
+            }
+        </style>
+
+
+
+
+
+        <!--
+  * The "meta viewport" tag (below) helps your app size appropriately to a device's ideal viewport.
+  * Note that Windows device viewports work better when initialized using the @viewport CSS rule.
+  * For a quick overview of "meta viewport" and @viewport, see this article:
+  *   http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag
+  * To see how it works, try your app on a real device with and without a "meta viewport" tag.
+  * Additional useful references include:
+  *   http://www.quirksmode.org/mobile/viewports.html
+  *   http://www.quirksmode.org/mobile/metaviewport/devices.html
+  *   https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+-->
+
+        <!-- <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1"> -->
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1, maximum-scale=2"> -->
+
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+
+<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      /* Optional: Makes the sample page fill the window. */
+
+     #map {
+        height: 600px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+</style>
+
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL here, if it does not work below. -->
+
+        <!-- Recommended location for your JavaScript libraries -->
+        <!-- These library references (below) are just examples to give you the general idea... -->
+        <!-- <script src="lib/mc/hammer.js"></script> -->
+        <!-- <script src="lib/ft/fastclick.js"></script> -->
+
+        <!--
+  * cordova.js is a phantom lib for "Cordova HTML5 web app," it does nothing in a "Standard HTML5 web app"
+  * Seeing a "Failed to load resource: net::ERR_FILE_NOT_FOUND" message caused by this "cordova.js" script?
+  * The cordova.js script is required if you convert your "Standard HTML5" project into a "Cordova" project.
+  * You can safely ignore the error or comment out this line if you will not be developing a Cordova app.
+-->
+        <script src="cordova.js"></script>
+
+        <script type="application/javascript" src="js/db-ajax.js"></script>
+        <script type="text/javascript" src="http://www.youtube.com/player_api">
+        </script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="lib/jquery.min.js"></script>
+        <script type="application/javascript" src="lib/lobibox/lobibox.js"></script>
+
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="xdk/appdesigner/js/rest-of-space.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="sidebar/js/hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/jquery.hammer.js"></script>
+        <script type="application/javascript" src="sidebar/js/swipe-hammer.js"></script>
+        <script type="application/javascript" src="js/index_user_scripts.js"></script>
+        <script type="application/javascript" src="xdk/ad/bs_subpage.js"></script>
+
+     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+
+        <div class="upage vertical-col   left vertical-col noborder  " id="mainpage">
+
+                <div class="uib-header header-bg container-group inner-element uib_w_90" data-uib="layout/header" data-ver="0">
+                <div class="widget-container content-area horiz-area wrapping-col left">
+ 
+
+                        <div class="tarea widget uib_w_115 d-margins" data-uib="media/text" data-ver="0" name="uib_w_115">
+                            <div class="widget-container left-receptacle">
+                              
+                                <img class="img-circle" width="50px" src="images/AppIcon.png" id="imglogo">
+                            </div>
+                            <div class="widget-container left-receptacle font-roboto font-login-color" 
+                             style="padding-top: 15px;padding-left: 15px;font-size: 15px;">
+                            TRADE COPIER
+                            </div>
+                            <div id="dadosserv" class="font-roboto font-login-color widget-container right-receptacle"></div>
+                        </div>
+                    </div>
+                </div>
+         
+
+
+
+
+            <center>
+
+                <div id="map" lass="font-roboto"  style =  font-size:'15px';color:black;">
+                      <img src="images/copy-trading.jpg" style="border-radius: 25px;max-width: 100%;height: auto;">
+                </div>
+            </center>
+
+
+                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_122 font-5  size-footer" data-uib="layout/footer" data-ver="0" >
+                    <table width="100%">
+                        <tbody >
+        <?php
+         include 'menu.php'; 
+         ?>
+                    </tbody>
+                    </table>
+
+                </div>
+
+
+        </div>
+
+
+
+
+        <div class="upage vertical-col noborder hidden" id="pg-login2">
+            <div class="grid grid-pad urow uib_row_8 row-height-8" data-uib="layout/row" data-ver="0">
+                <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col">
+                        <div class="tarea widget uib_w_115 d-margins" data-uib="media/text" data-ver="0" name="uib_w_115">
+                            <div class="widget-container left-receptacle"></div>
+                            <div class="widget-container right-receptacle"></div>
+                            <div class="text-container">
+                                <p>&nbsp; &nbsp;&nbsp;</p>
+
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                        <div class="widget uib_w_114 scale-image" data-uib="media/img" data-ver="0">
+                            <figure class="figure-align">
+                                <img class="img-circle" src="images/AppIcon.png" id="imglogo">
+
+                                <figcaption data-position="bottom"></figcaption>
+                            </figure>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+                </div>
+                <span class="uib_shim"></span>
+            </div>
+            <center>
+                <div id="message-login" class="font-roboto font-login-color">
+                </div>
+
+            </center>
+            <div>
+                <br>
+                <br>
+                <input type="hidden" id="iduser" >
+            </div>
+
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto input-font-size" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="repEmail"></label>
+                    <input class="wide-control text-line-input font-login-color" type="email" placeholder="Email" id="repEmail">
+                </div>
+            </center>
+            <div>
+                <br>
+                <br>
+            </div>
+            <center>
+                <div class="table-thing widget uib_w_2 d-margins field-width-250 font-roboto input-font-size" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="repPwd"></label>
+                    <input class="wide-control  text-line-input default font-login-color" type="password" placeholder="Password" id="repPwd">
+                </div>
+            </center>
+            <div>&nbsp;</div>
+            <center>
+                <button class="btn widget uib_w_113 font-white font-oswald-14 signin-button font-login-color font-roboto btn-default bt-login-red" data-uib="twitter%20bootstrap/button" data-ver="1" id="btlogin">Entrar</button>
+            </center>
+            <center>
+                <div class="tarea widget uib_w_163 d-margins font-white padding-top-20 size-label-1 align-center font-login-color font-roboto" data-uib="media/text" data-ver="0" name="uib_w_163" id="btemailsignup" stile="align:center;">
+                    <div class="widget-container left-receptacle">Esqueceu a senha?</div>
+                    <div class="widget-container right-receptacle"></div>
+                    <div class="text-container">
+                        <p></p>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+
+
+       <div class="upage hidden font-roboto font-white-1 bg-pg-ondemand " id="pg-profile">
+            <div class="upage-outer">
+                <div class="uib-header bg-footer-ondemand padding-top-10" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container left-receptacle" id="profileUser" style="min-width:80%;"></div>
+                    <div class="widget-container right-receptacle">
+                    <a href="#"  onclick="editProfile();" style="font-size: 15px;  min-width:20%;align:right;padding-left:20px;"> 
+                        <i class="fa fa-pencil custom-icon "></i>
+                    </a>
+                    <a href="#"  onclick="listComissoes();" style="font-size: 15px;min-width:20%;align:right;padding-left:20px;">
+                        <i class="fa fa-money custom-icon "></i>
+                    </a>
+                   </div>
+                </div>
+
+                <div class="scrollpage">
+
+
+                            <div class="upage-content ac0 content-area vertical-col left" id="page_6_70">
+
+                                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+                                    <div class="col uib_col_14 col-0_12-12" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col"  id="msgprofile">
+                                            <span class="uib_shim"></span>
+
+                                        </div>
+                                    </div>
+                                    <span class="uib_shim"></span>
+                                </div>
+                                <div class="tarea widget uib_w_166 d-margins" data-uib="media/text" data-ver="0" name="uib_w_166" >
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div class="text-container" id="showuserprofile">
+                                    </div>
+                                </div>
+
+                               <div class="tarea widget uib_w_166 d-margins" data-uib="media/text" data-ver="0" name="uib_w_166" >
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div class="text-container" id="showrefer">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="upage-content ac0 content-area vertical-col left" id="page_6_70">
+
+                                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+                                    <div class="col uib_col_14 col-0_12-12" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col">
+                                            <span class="uib_shim"></span>
+                                        </div>
+                                    </div>
+                                    <span class="uib_shim"></span>
+                                </div>
+
+                            </div>
+
+
+                </div>
+
+                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_164 font-5 padding-top size-footer font-roboto bg-footer-ondemand" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
+                    <table width="100%" height="50px">
+                        <tbody>
+<?php include 'menu.php'; ?>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+</div>
+
+
+
+
+           <div class="upage hidden font-roboto font-white-1 bg-pg-ondemand" id="pg-profile-edit">
+                <div class="upage-outer">
+                    <div class="uib-header bg-footer-ondemand padding-top-10" data-uib="layout/header" data-ver="0">
+                        <div class="widget-container left-receptacle bg-footer-ondemand " id="profileUserEdit" width="30%"></div>
+                        <div class="widget-container right-receptacle bg-footer-ondemand "></div>
+                        <div class="text-container bg-footer-ondemand ">
+                         <p id="btMenuRep" style="font-size:19px;" class="">&nbsp;&nbsp;&nbsp;Meus Dados - Alteração 
+                        </div>
+                    </div>
+
+                    <div class="upage-content ac0 content-area vertical-col left" id="page_6_70">
+
+                    <div class="font-white bg-pg-ondemand" data-uib="layout/card_grid" data-ver="0" id="messageprofileedit"></div>
+
+                        <div class="tarea widget uib_w_170 d-margins" data-uib="media/text" data-ver="0" name="uib_w_170" id="showProfileEditForm">
+                            <div class="widget-container left-receptacle"></div>
+                            <div class="widget-container right-receptacle"></div>
+                            <div class="text-container">
+ 
+
+                            </div>
+                        </div>
+
+ 
+                    </div>
+
+                    <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_164 font-5 padding-top size-footer font-roboto bg-footer-ondemand" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
+                        <table width="100%" height="50px">
+                            <tbody>
+<?php include 'menu.php'; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+       <div class="upage hidden font-roboto font-white-1 bg-pg-ondemand " id="pg-financeiro">
+            <div class="upage-outer">
+                <div class="uib-header bg-footer-ondemand padding-top-10" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container left-receptacle" id="financUser" style="min-width:80%;"></div>
+                    <div class="widget-container right-receptacle">
+                    <a href="#"  onclick='activate_page("#pg-profile");' style="min-width:20%;align:right;padding-left:20px;"> 
+                        <i class="fa fa-arrow-left custom-icon "></i>
+                    </a>
+                   </div>
+                </div>
+
+                <div class="scrollpage">
+
+                            <div class="upage-content ac0 content-area vertical-col left" id="page_6_70">
+
+                                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+                                    <div class="col uib_col_14 col-0_12-12" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col"  id="msgfinanc">
+                                            <span class="uib_shim"></span>
+                                        </div>
+                                    </div>
+                                    <span class="uib_shim"></span>
+                                </div>
+                                <div class="tarea widget uib_w_166 d-margins" data-uib="media/text" data-ver="0" name="uib_w_166" >
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div class="text-container" id="showtotalfinanc">
+                                    </div>
+                                </div>
+
+                                <div class="tarea widget uib_w_166 d-margins" data-uib="media/text" data-ver="0" name="uib_w_166" >
+                                    <div class="widget-container left-receptacle"></div>
+                                    <div class="widget-container right-receptacle"></div>
+                                    <div class="text-container" id="showuserfinanc">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="upage-content ac0 content-area vertical-col left" id="page_6_70">
+
+                                <div class="grid grid-pad urow uib_row_12 row-height-12" data-uib="layout/row" data-ver="0">
+                                    <div class="col uib_col_14 col-0_12-12" data-uib="layout/col" data-ver="0">
+                                        <div class="widget-container content-area vertical-col">
+                                            <span class="uib_shim"></span>
+                                        </div>
+                                    </div>
+                                    <span class="uib_shim"></span>
+                                </div>
+
+                            </div>
+
+
+                </div>
+
+                <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_164 font-5 padding-top size-footer font-roboto bg-footer-ondemand" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
+                    <table width="100%" height="50px">
+                        <tbody>
+<?php include 'menu.php'; ?>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+</div>
+
+
+
+        <div class="upage hidden bg-pg-ondemand font-roboto" id="email-contact">
+            <div class="upage-outer">
+  
+                <div class="uib-header header-bg container-group inner-element uib_w_90" data-uib="layout/header" data-ver="0">
+                    <div class="widget-container content-area horiz-area wrapping-col left">
+                <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col font-roboto font-login-color">
+                        <div class="widget-container left-receptacle">
+                                <img class="img-circle" src="images/AppIcon.png" style="width:50px;padding-left: 5px;"   id="imglogo">
+                              SOS SERVICOS 
+                       </div>
+                    </div>
+                       <span class="uib_shim"></span>
+                </div>
+
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+
+
+
+
+
+
+
+                <div class="upage-content ac0 content-area vertical-col left" id="page_71_59">
+                    <div class="grid grid-pad urow uib_row_4 row-height-4" data-uib="layout/row" data-ver="0">
+                        <div class="col uib_col_6 col-0_12-12" data-uib="layout/col" data-ver="0">
+                            <div class="widget-container content-area vertical-col">
+                                <span class="uib_shim"></span>
+                            </div>
+                        </div>
+                        <span class="uib_shim"></span>
+                    </div>
+
+                    <div class="tarea widget uib_w_96 d-margins font-oswald-white" data-uib="media/text" data-ver="0" name="uib_w_96" id="messageReturnEmail">
+                        <div class="widget-container left-receptacle"></div>
+                        <div class="widget-container right-receptacle"></div>
+                        <div class="text-container"></div>
+                    </div>
+
+                    <div class="table-thing widget uib_w_93 d-margins" data-uib="twitter%20bootstrap/input" data-ver="1">
+                        <label class="narrow-control" for="emailSubject"></label>
+                        <input class="wide-control  default text-line-input" type="text" placeholder="Assunto" id="emailSubject">
+                        <input type="hidden" id="typeEmail">
+                    </div>
+                    <div>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="table-thing widget uib_w_94 d-margins" data-uib="twitter%20bootstrap/text_area" data-ver="1">
+                        <label class="narrow-control"></label>
+                        <textarea rows="8" class="wide-control  text-line-input" wrap="soft" placeholder="Digite sua mensagem" id="emailText"></textarea>
+                    </div>
+                    <button class="btn widget uib_w_95 btn-default bt-login-red font-white-1" data-uib="twitter%20bootstrap/button" data-ver="1" id="btSendEmailMessage">ENVIAR</button>
+
+                    <br><br><br><br>
+                </div>
+               <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_122 font-5 padding-top size-footer bg-footer-ondemand" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;padding-left:0px;">
+                    <table width="100%" height="50px">
+                        <tbody>
+<?php
+ include 'menu.php'; 
+ ?>
+                        </tbody>
+                    </table>
+
+                </div>
+ 
+            </div>
+        </div>
+        
+
+
+
+
+
+
+        <div class="upage hidden bg-pg-ondemand font-roboto" id="pg-signup">
+            <div class="upage-outer">
+ 
+
+                <div class="uib-header header-bg container-group inner-element uib_w_90" data-uib="layout/header" data-ver="0">
+                <div class="widget-container content-area horiz-area wrapping-col left">
+                <div class="col uib_col_10 col-0_12-12" data-uib="layout/col" data-ver="0">
+                    <div class="widget-container content-area vertical-col font-roboto font-login-color">
+                        <div class="widget-container left-receptacle">
+                                <img class="img-circle" src="images/AppIcon.png" style="width:50px;padding-left: 10px;"   id="imglogo">
+                              TRADE COPIER 
+                       </div>
+                    </div>
+                       <span class="uib_shim"></span>
+                </div>
+
+                    </div>
+                    <div class="widget-container content-area horiz-area wrapping-col right"></div>
+                </div>
+
+
+
+            <center>
+                <div id="message-signup1" class="font-roboto font-login-color">
+                	<p> Para que sua conta seja sincronizada com o TRADER você precisa fornecer o código do trader e o numero da sua conta de operacao. 
+
+                	<h4>PREENCHA OS DADOS ABAIXO:</h4>
+
+                </div>
+
+            </center>
+
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-fname"></label>
+                    <input class="wide-control text-line-input font-login-color" type="text" placeholder="Seu Nome" id="setup-fname">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-codigo"></label>
+                    <input class="wide-control text-line-input font-login-color" type="text" placeholder="Escolha o seu codigo" id="setup-codigo">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+
+  
+
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-email"></label>
+                    <input class="wide-control text-line-input font-login-color" type="email" placeholder="Email" id="setup-email">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-conta"></label>
+                    <input class="wide-control text-line-input font-login-color" type="text" placeholder="Conta" id="setup-conta">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+
+            <center>
+                <div class="table-thing widget uib_w_1 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-trader"></label>
+                    <input class="wide-control text-line-input font-login-color" type="text" placeholder="Código do Trader" id="setup-trader">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+
+            <center>
+                <div class="table-thing widget uib_w_2 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-pwd1"></label>
+                    <input class="wide-control  text-line-input default font-login-color" type="password" placeholder="Senha" id="setup-pwd1">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+            <center>
+                <div class="table-thing widget uib_w_2 d-margins field-width-250 font-roboto" data-uib="twitter%20bootstrap/input" data-ver="1">
+                    <label class="narrow-control" for="setup-pwd2"></label>
+                    <input class="wide-control  text-line-input default font-login-color" type="password" placeholder="Repita a senha" id="setup-pwd2">
+                </div>
+            </center>
+            <div>
+                <br>
+            </div>
+
+
+
+
+
+            <center>
+                    <fb:login-button 
+                      scope="public_profile,email,user_location"
+                      onlogin="checkLoginState();">
+                    </fb:login-button>
+            </center>
+
+            <div>
+                <br>
+            </div>
+
+            <div>&nbsp;</div>
+            <center>
+                <button class="btn widget font-oswald-24 bg-grey bg-signup-button" data-uib="twitter%20bootstrap/button" data-ver="1" id="btsignupsave"><i class="fa fa-arrow-circle-o-right fa-3x" data-position="icon only"></i>
+                </button>
+                <br><br><br><br><br>
+            </center>
+ </div></div>      
+            <div class="uib-footer uib-footer-fixed container-group inner-element uib_w_164 font-5 size-footer font-roboto bg-footer-ondemand" data-uib="layout/footer" data-ver="0" style="padding-bottom:10px;">
+                        <table width="100%" height="50px">
+                            <tbody>
+<?php include 'menu.php'; ?>
+                            </tbody>
+                        </table>
+           </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+    </body>
+
+</html>

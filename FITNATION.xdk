@@ -1,0 +1,238 @@
+{
+  "project": {
+    "projectSettingsVersion": "3.0.0",
+    "creationData": {
+      "type": "App Designer",
+      "projectTypeName": "com.intel.xdk.projecttype.webapp",
+      "src": "webapp/template-blank-ad-project/sample.zip",
+      "projectGuid": "9b927f1b-bb29-460f-be76-ba1f299b1ecd",
+      "lastModifiedDate": 1499728567760,
+      "creationDate": 1494355930126
+    },
+    "XDK-app-designer": "true",
+    "sourceDirectory": "www",
+    "startFile": "index.html",
+    "projectFiles": {
+      "xdk-publish-meta-data.json": {
+        "settings": {
+          "project": {
+            "XDK-not-deployed": "True"
+          }
+        }
+      }
+    },
+    "projectDirectories": {},
+    "libraries": [],
+    "serviceMethods": [],
+    "cordovaPluginsDirectory": "plugins",
+    "cordovaPlugins": [],
+    "buildConfigurations": {
+      "Android": {
+        "platform_": "android",
+        "runtime_": "W3C on Crosswalk",
+        "name_": "Android",
+        "preferences_": {
+          "android-minSdkVersion": "14",
+          "android-targetSdkVersion": "21",
+          "android-installLocation": "auto",
+          "Fullscreen": false,
+          "Orientation": "portrait",
+          "android-signed": true,
+          "AndroidLaunchMode": "singleTop"
+        },
+        "isActive_": true,
+        "certificateId_": "AHAm4Vp04EGhK77wLFSU4g2",
+        "cordovaCLIVersion_": "6.2.0",
+        "crosswalkVersion_": "19",
+        "appName_": "BIKE",
+        "appID_": "xdk.intel.template",
+        "appAccess_": {
+          "mode": "whitelist",
+          "network": [
+            "*"
+          ],
+          "intents": [
+            "http://*/*",
+            "https://*/*",
+            "tel:*",
+            "sms:*",
+            "mailto:*",
+            "geo:*",
+            "market:*"
+          ],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "ACCESS_COARSE_LOCATION;ACCESS_FINE_LOCATION",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
+        "appVersionCode_": "1",
+        "appDescription_": "Workout bike",
+        "appAuthor_": "Intel XDK",
+        "signed_": true
+      },
+      "iOS": {
+        "platform_": "ios",
+        "runtime_": "W3C on Cordova",
+        "name_": "iOS",
+        "preferences_": {
+          "exit-on-suspend": false,
+          "deployment-target": "8.0",
+          "ios-configuration": "adhoc",
+          "Fullscreen": false,
+          "Orientation": "portrait"
+        },
+        "isActive_": false,
+        "certificateId_": "",
+        "cordovaCLIVersion_": "6.2.0",
+        "crosswalkVersion_": "19",
+        "appName_": "DPG-REP",
+        "appID_": "xdk.intel.template",
+        "appAccess_": {
+          "mode": "whitelist",
+          "network": [
+            "*"
+          ],
+          "intents": [
+            "http://*/*",
+            "https://*/*",
+            "tel:*",
+            "sms:*",
+            "mailto:*",
+            "geo:*",
+            "itms:*",
+            "itms-apps:*"
+          ],
+          "navigation": []
+        },
+        "icons_": [
+          {
+            "relPath": "package-assets/29.png",
+            "width": 29,
+            "height": 29
+          },
+          {
+            "relPath": "package-assets/58.png",
+            "width": 58,
+            "height": 58
+          },
+          {
+            "relPath": "package-assets/87.png",
+            "width": 87,
+            "height": 87
+          },
+          {
+            "relPath": "package-assets/60.png",
+            "width": 60,
+            "height": 60
+          }
+        ],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "iosProvs_": [],
+        "appVersion_": "0.0.1",
+        "appVersionCode_": "1",
+        "appDescription_": "Intel XDK template",
+        "appAuthor_": "Intel XDK"
+      },
+      "Windows8": {
+        "platform_": "windows8",
+        "runtime_": "W3C on Cordova",
+        "name_": "Windows8",
+        "preferences_": {
+          "windows-publisher-display-name": "",
+          "windows-publisher-id": "",
+          "Fullscreen": false,
+          "Orientation": "portrait"
+        },
+        "isActive_": false,
+        "certificateId_": "",
+        "cordovaCLIVersion_": "6.2.0",
+        "crosswalkVersion_": "19",
+        "appName_": "DPG-REP",
+        "appID_": "xdk.intel.template",
+        "appAccess_": {
+          "mode": "whitelist",
+          "network": [
+            "*"
+          ],
+          "intents": [
+            "http://*/*",
+            "https://*/*",
+            "tel:*",
+            "sms:*",
+            "mailto:*",
+            "geo:*"
+          ],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.0.1",
+        "appVersionCode_": "1",
+        "appDescription_": "Intel XDK template",
+        "appAuthor_": "Intel XDK"
+      },
+      "WebApp": {
+        "platform_": "webapp",
+        "runtime_": "W3C",
+        "name_": "WebApp",
+        "preferences_": {},
+        "isActive_": false,
+        "certificateId_": "",
+        "appName_": "Intel XDK Template",
+        "appID_": "xdk.intel.template",
+        "appAccess_": {
+          "mode": "whitelist",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Intel XDK template",
+        "appAuthor_": "Intel XDK"
+      },
+      "Chrome": {
+        "platform_": "chromeos",
+        "runtime_": "W3C on Chrome OS",
+        "name_": "Chrome",
+        "preferences_": {},
+        "isActive_": false,
+        "certificateId_": "",
+        "appAccess_": {
+          "mode": "whitelist",
+          "network": [
+            "*"
+          ],
+          "intents": [],
+          "navigation": []
+        },
+        "icons_": [],
+        "splashes_": [],
+        "addlPermissions_": "",
+        "excludedLibraries_": "",
+        "appName_": "DPG-REP",
+        "appID_": "xdk.intel.template",
+        "appVersion_": "0.0.1",
+        "appDescription_": "Intel XDK template",
+        "appAuthor_": "Intel XDK"
+      }
+    },
+    "gameAssetDirectory": "asset",
+    "gameMetadata": {},
+    "projectTags": [
+      "XDK-disallow-legacy-whitelist"
+    ],
+    "testDirectory": "test"
+  }
+}

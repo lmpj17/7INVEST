@@ -1,0 +1,322 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
+
+/* This file is completely optional and not required. */
+/* Note the reference that includes it in the index.html file. */
+
+
+/* Disable certain interactions on touch devices */
+/* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
+/* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
+
+
+
+body {
+    -webkit-touch-callout: none ;
+    -webkit-text-size-adjust: none ; -ms-text-size-adjust: none ;
+    -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;
+    -webkit-highlight: none ;
+    -webkit-tap-highlight-color: rgba(0,0,0,0) ;
+    -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+html {
+    -ms-touch-action: pan-x ;
+}
+
+/* Recommended for Windows 8 Phone */
+/* SOURCE: http://www.excellentwebworld.com/common-problems-solution-for-windows-phone-8-phonegap */
+body {
+    -ms-touch-action: pan-y ;
+    -ms-content-zooming: none ;
+}
+
+/* allow copy-paste */
+input, textarea  {
+    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
+}
+
+body {
+    /* margin: 0.5rem ; */
+    font-family: font-roboto;
+}
+
+
+@media print {
+
+    .cancelado {
+/*        background-image: url('http://alef.lmcomercial.com.br/uploads/images/82/design.jpg');
+ */     height:1500px;
+        width:1500px;
+        -webkit-print-color-adjust: exact;   
+         }
+}
+
+#menu ul {
+  height: auto;
+  text-align: justify;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+#menu ul:after {
+  content: "";
+  margin-left: 100%;
+}
+#menu li {
+  display: inline;
+    font-size: 8px;
+    color:#808080;
+}
+#menu a {
+  display: inline-block;
+    color:#808080;    
+}
+
+#menu1 ul {
+  height: auto;
+  text-align: justify;
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+#menu1 ul:after {
+  content: "";
+  margin-left: 100%;
+}
+#menu1 li {
+  display: inline;
+    font-size: 8px;
+    color:#808080;
+    
+}
+#menu1 a {
+  display: inline-block;
+    color:#808080;    
+}
+
+
+
+
+::-webkit-scrollbar{width:2px;height:2px;}
+::-webkit-scrollbar-button{width:2px;height:2px;}
+
+div{
+  box-sizing:border-box;
+}
+
+body {
+  background: #fff;
+    
+}
+
+.horizontal-scroll-wrapper{
+  position:absolute;
+  display:block;
+  top:0;
+  left:0;
+  width:80px;
+  max-height:800px;
+  margin:0;
+  background:#fff;
+  overflow-y:auto;
+  overflow-x:hidden;
+  transform:rotate(-90deg) translateY(-80px);
+  transform-origin:right top;
+}
+.horizontal-scroll-wrapper > div{
+  display:block;
+  padding:5px;
+  background:#fff;
+  transform:rotate(90deg);
+  transform-origin: right top;
+}
+
+.squares{
+  padding:60px 0 0 0;
+}
+
+.squares > div{
+  width:60px;
+  height:60px;
+  margin:10px;
+}
+
+.rectangles{
+  top:100px;
+  padding:100px 0 0 0;
+}
+.rectangles > div{
+  width:140px;
+  height:60px;
+  margin:50px 10px;
+  padding:5px;
+  background:#fff;
+  transform:rotate(90deg) translateY(80px);
+  transform-origin: right top;
+}
+
+div.scrollmenu {
+    background-color: #121212;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 14px;
+    width:100%;
+    font-family: Roboto-Thin;
+    vertical-align: top;
+    border:#121212 1px solid;
+}
+
+div.scrollmenu4 {
+    background-color: #fff;
+    font-size: 14px;
+    width:100%;
+    text-align: center;
+}
+
+div.scrollmenu1 {
+    background-color: #fff;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 14px;
+    width:600px;
+     background-color: #121212;
+    font-family: Roboto-Thin;
+    
+}
+
+div.scrollmenu a  {
+    display: inline-block;
+    color: #3333;
+    text-align: center;
+    padding: 5px;
+    padding-left:15px;
+    text-decoration: none;
+    min-width: 25%;
+    font-family: Roboto-Thin;
+}
+div.scrollmenu4 a  {
+    display: inline-block;
+    color: #3333;
+    min-width: 25%;
+    min-height:30px;
+    padding-top: 5px;
+    font-family: Roboto-Regular;
+}
+
+
+div.scrollmenu1 a  {
+    display: inline-block;
+    color: #fff;
+    background-color: #121212;
+    text-align: left;
+    padding: 0px;
+    padding-left:15px;
+    text-decoration: none;
+    min-width: 15px;
+    font-family: Roboto-Thin;
+}
+
+div.scrollmenu1 a:hover {
+    color: #121212;
+}
+div.scrollmenu a:hover {
+    color: #121212;
+}
+div.scrollmenu4 a:hover {
+    color: #121212;
+}
+
+
+div.scrollpage {
+    background-color: #121212;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 14px;
+    height:100%;
+    font-family: Roboto-Thin;
+    vertical-align: top;
+    border:#121212 1px solid;
+}
+
+div.scrollpage li  {
+    display: inline-block;
+    background-color: #121212;
+    text-align: left;
+    padding: 0px;
+    text-decoration: none;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+
+
+div.scrollmenu table  {
+    display: inline-block;
+    background-color: #121212;
+    text-align: left;
+    padding: 0px;
+    text-decoration: none;
+    min-width: 10px;
+    min-height: 115px;
+}
+
+div.scrollmenu table:hover {
+    background-color: #121212;
+}
+
+
+
+input[type=radio].required::after, input[type=checkbox].required::after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #101425 !important;
+    content: '';
+    border: 2px solid #21e7b6 !important;
+    box-sizing: border-box;
+}
+/* Radio buttons are round, so add 100% border radius. */
+input[type=radio].required::after {
+     border-radius:100%;
+}
+
+.custom-icon {
+  background: #666;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 100%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.46);
+  color: #fff;
+  display: table-cell;
+  font-size: 25px;
+  height: 10px;
+  padding: 5px;
+  text-align: center;
+  transition: .5s;
+  vertical-align: middle;
+  width: 10px;
+}
+.custom-icon:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+.fix-editor {
+  display: none;
+}
+.icon-wrapper {
+  display: inline-block;
+}
+.padding-top-10 {
+  padding-top: 10px;
+}
+.padding-right-10 {
+  padding-right: 10px;
+}
+
